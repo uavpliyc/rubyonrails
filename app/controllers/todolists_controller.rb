@@ -17,11 +17,11 @@ class TodolistsController < ApplicationController
   def show
     @list = List.find(params[:id])
   end
-  
+
   def edit
     @list = List.find(params[:id])
   end
-  
+
   def update
     list = List.find(params[:id])
     list.update(list_params)
@@ -30,7 +30,7 @@ class TodolistsController < ApplicationController
 
   private
   def list_params
-    params.require(:list).permit(:title, :body)
+    params.require(:list).permit(:title, :body, :image)
   end
 
 end

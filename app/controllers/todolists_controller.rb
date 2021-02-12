@@ -1,5 +1,4 @@
 class TodolistsController < ApplicationController
-
   def new
     @list = List.new
   end
@@ -27,7 +26,7 @@ class TodolistsController < ApplicationController
     list.update(list_params)
     redirect_to todolist_path(list.id)
   end
-  
+
   def destroy
     list = List.find(params[:id])
     list.destroy
@@ -35,8 +34,8 @@ class TodolistsController < ApplicationController
   end
 
   private
+
   def list_params
     params.require(:list).permit(:title, :body, :image)
   end
-
 end
